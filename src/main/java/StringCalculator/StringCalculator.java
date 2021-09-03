@@ -50,5 +50,5 @@ public class StringCalculator {
 
     public static int intparse(String str){
         return Integer.parseInt(str);
-    }
+    }//
 }
