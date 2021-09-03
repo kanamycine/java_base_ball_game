@@ -4,7 +4,7 @@
 
 ### - Game 
 
-- RandomGenerator 생성 메서드
+### - RandomGenerator 생성 메서드
 
 ### - GuessBall  
 
@@ -12,7 +12,7 @@
 
 - Judge 볼 스트라이크 판단 메서드
 
-### - Terminated 종료
+### - Terminate 종료
 
 - 종료 or 다시하기 메서드
 
