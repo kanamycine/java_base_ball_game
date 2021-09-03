@@ -4,7 +4,7 @@
 
 ### - Game 
 
-- RandomGenerator 생성 메서드
+### - RandomGenerator 생성 메서드
 
 ### - GuessBall  
 
