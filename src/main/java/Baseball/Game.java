@@ -11,7 +11,7 @@ public class Game {
         RandomGenerator randomGenerator = new RandomGenerator();
         InputView inputView = new InputView();
         int [] arr = randomGenerator.makeRandomNumber();
-
+        while(true){
         while(flag == 0) {
             int[] input_arr = inputView.inputView();
             Judge judge = new Judge(input_arr, arr);
@@ -35,5 +35,9 @@ public class Game {
             OutputView outputView = new OutputView(strikeCount, ballCount);
             flag = outputView.outputView();
         }
+        if(flag == 2){
+            break;
+        }
+    }
     }
 }

@@ -20,19 +20,20 @@ public class OutputView {
             System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
             int flagInput = scanner.nextInt();
             return flagInput;
-        }else if(strikeCount != 3){
-            if(strikeCount == 0 && ballCount == 0){
-                System.out.println("낫싱");
-            }else if(strikeCount == 0){
-                System.out.println(ballCount + "볼");
-            }
-            else if(strikeCount !=0){
-                System.out.println(ballCount + "볼" + " " + strikeCount + "스트라이크");
-            }
-            else if(ballCount !=0){
-                System.out.println(strikeCount + "스트라이크");
-            }
         }
+        if(strikeCount == 0 && ballCount == 0){
+            System.out.println("낫싱");
+            }
+        if(strikeCount != 0 && ballCount == 0){
+            System.out.println(strikeCount + "스트라이크");
+        }
+        if(strikeCount == 0 && ballCount != 0){
+            System.out.println(ballCount + "볼");
+            }
+        if(strikeCount != 0 && ballCount != 0){
+            System.out.println(ballCount + "볼" + " " + strikeCount + "스트라이크");
+            }
+
         return 0 ;
     }
 }
