@@ -8,7 +8,7 @@ public class RandomGenerator {
         Random random = new Random();
 
         for(int i = 0 ; i < arr.length; i++) {
-            arr[i] = random.nextInt(10);
+            arr[i] = random.nextInt(8) + 1;
         }
 
         return arr;

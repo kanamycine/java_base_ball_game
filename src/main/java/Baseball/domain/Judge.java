@@ -11,9 +11,6 @@ public class Judge {
         this.arr = arr;
     }
 
-    public Judge(){
-    }
-
     int ballCount = 0;
     int strikeCount = 0;
     boolean isNothing = false;
