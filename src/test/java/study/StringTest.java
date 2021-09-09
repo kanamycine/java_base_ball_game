@@ -29,7 +29,6 @@ public class StringTest {
     }
 
 
-
     //요구사항 3
     @Test
     void charat() {
@@ -51,8 +50,8 @@ public class StringTest {
         })
                 .isInstanceOf(IndexOutOfBoundsException.class)
                 .hasMessageContaining("String index out of range: 3");
-        }
     }
+}
 
 
 

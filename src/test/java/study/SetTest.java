@@ -27,21 +27,21 @@ public class SetTest {
     // Test Case 구현
     @DisplayName("set size test")
     @Test
-    void setSize(){
+    void setSize() {
         assertThat(numbers.size()).isEqualTo(3);
     }
 
     @DisplayName("Set contains method test")
     @ParameterizedTest
-    @ValueSource(ints = {1,2,3})
-    void contains(int p_int){
+    @ValueSource(ints = {1, 2, 3})
+    void contains(int p_int) {
         assertThat(numbers.contains(p_int)).isTrue();
     }
 
     @DisplayName("contains method test by different input")
     @ParameterizedTest
-    @CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter =  ':')
-    void diffInput(int element, boolean expected){
+    @CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter = ':')
+    void diffInput(int element, boolean expected) {
         assertThat(numbers.contains(element)).isEqualTo(expected);
     }
 }

@@ -1,4 +1,5 @@
 package StringCalculator;
+
 import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
@@ -12,35 +13,39 @@ public class StringCalculator {
         System.out.println(res);
     }
 
-    public static void run(){
+    public static void run() {
         input();
         res = operator();
     }
 
-    public static void input(){
+    public static void input() {
         Scanner scan = new Scanner(System.in);
         String value = scan.nextLine();
         values = value.split(" ");
     }
 
-    public static int operator(){
+    public static int operator() {
         int len = values.length;
         String operand = "";
-        for(int i = 0; i < len; i++){
-            if(i == 0){
+        for (int i = 0; i < len; i++) {
+            if (i == 0) {
                 res += intparse(values[i]);
-            }else if(i % 2 == 1){
+            } else if (i % 2 == 1) {
                 operand = values[i];
-            }else if(i % 2 == 0){
+            } else if (i % 2 == 0) {
                 int num = intparse(values[i]);
-                switch(operand){
-                    case "+": res += num;
+                switch (operand) {
+                    case "+":
+                        res += num;
                         break;
-                    case "-": res -= num;
+                    case "-":
+                        res -= num;
                         break;
-                    case "*": res *= num;
+                    case "*":
+                        res *= num;
                         break;
-                    case "/": res /= num;
+                    case "/":
+                        res /= num;
                         break;
                 }
             }
@@ -48,7 +53,7 @@ public class StringCalculator {
         return res;
     }
 
-    public static int intparse(String str){
+    public static int intparse(String str) {
         return Integer.parseInt(str);
     }//
 }
