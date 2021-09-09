@@ -15,8 +15,14 @@ package baseballafterfeedback;
 // - [ ] 같은 수가 같은 자리에 있으면 스트라이크다
 // - [ ] 같은 수가 전혀 없으면 낫싱이다.
 
+import baseballafterfeedback.domain.NumberGenerator;
+
+import java.util.List;
+
 public class Appplication {
     public static void main(String[] args) {
-
+        final NumberGenerator generator = new NumberGenerator();
+        List<Integer> numbers = generator.createRandomNumbers();
+        System.out.println(numbers);
     }
 }
