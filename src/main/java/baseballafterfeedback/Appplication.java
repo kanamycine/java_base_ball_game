@@ -11,21 +11,43 @@ package baseballafterfeedback;
 // - [x] 컴퓨터의 수 (3자리)와 플레이어의 수 (3자리)를 비교할 수 있다. - Referee#compare()
 //      - [x] 몇 개의 숫자가 같은지를 알 수 있다. - Judgement#correctCount()
 //      - [x] 특정 자리에 특정 숫자가 있는 지 알 수 있다. - Judgement#hasPlace()
-// - [ ] 같은 수가 다른 자리에 있으면 볼이다. -
-// - [ ] 같은 수가 같은 자리에 있으면 스트라이크다
-// - [ ] 같은 수가 전혀 없으면 낫싱이다.
+// - [x] 같은 수가 다른 자리에 있으면 볼이다. -
+// - [x] 같은 수가 같은 자리에 있으면 스트라이크다
+// - [x] 같은 수가 전혀 없으면 낫싱이다.
 
 import baseballafterfeedback.domain.Judgement;
 import baseballafterfeedback.domain.NumberGenerator;
 import baseballafterfeedback.domain.Referee;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Appplication {
     public static void main(String[] args) {
+        NumberGenerator numberGenerator = new NumberGenerator();
+        List<Integer> computer = numberGenerator.createRandomNumbers();
         Referee referee = new Referee();
-        String result = referee.compare(Arrays.asList(1,2,3), Arrays.asList(1,2,3));
-        System.out.println(result);
+
+        String result ="";
+        while(!result.equals("0볼 3스트라이크")){
+            result = referee.compare(computer, askNumbers());
+            System.out.println(result);
+            System.out.println(computer);
+        }
+        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    }
+
+    public static List<Integer> askNumbers(){
+        System.out.print("숫자를 입력해 주세요 : ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+
+        List<Integer> numbers = new ArrayList<>();
+        for (String number : input.split("")){
+            numbers.add(Integer.valueOf(number));
+        }
+        return numbers;
     }
 }
