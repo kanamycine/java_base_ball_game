@@ -9,7 +9,7 @@ import java.util.Random;
 public class RandomGenerator {
 
 
-    public List<Integer> ComputerNumberGenerator(){
+    public List<Integer> computerNumberGenerator(){
         List<Integer> computer =new ArrayList<Integer>();
         Random random = new Random();
         while(computer.size() < 3){
