@@ -22,26 +22,27 @@ import FinalBaseBall.View.OutputView;
 import FinalBaseBall.domain.Judge;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-        // 난수 생성 및, 사용자 입력 받기
         RandomGenerator randomGenerator = new RandomGenerator();
         InputView inputView = new InputView();
+        OutputView outputView = new OutputView();
 
-        String user = inputView.input();
         List<Integer>  computer = randomGenerator.computerNumberGenerator();
         System.out.println(computer);
 
         // 스트라이크, 볼 , 낫싱 판단
-        Judge judge = new Judge();
-        List<Integer> count = judge.judge(computer, user);
-
-
-        // 출력, loop 질문
-        OutputView outputView = new OutputView();
-        outputView.outputView(count);
+            int strikeFlag = 0;
+            while (strikeFlag != 3) {
+                String user = inputView.input();
+                Judge judge = new Judge();
+                List<Integer> count = judge.judge(computer, user);
+                int loopFlag = outputView.outputView(count);
+                strikeFlag = count.get(1);
+            }
         }
     }
 
