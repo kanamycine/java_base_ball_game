@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Appplication {
+public class Appplicationed {
     public static void main(String[] args) {
         NumberGenerator numberGenerator = new NumberGenerator();
         List<Integer> computer = numberGenerator.createRandomNumbers();
